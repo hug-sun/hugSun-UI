@@ -2,6 +2,7 @@
   "private": true,
   "name": "hugSun-UI",
   "version": "1.0.0",
+  "homepage": "https://[username].github.io/hugSun-UI",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
