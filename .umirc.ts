@@ -7,4 +7,7 @@ export default defineConfig({
   logo: '/images/logo.png',
   outputPath: 'docs-dist',
   mode: 'site',
+  history: {
+    type: 'hash',
+  },
 });
