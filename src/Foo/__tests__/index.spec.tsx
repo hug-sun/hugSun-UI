@@ -6,7 +6,6 @@ describe('Foo', () => {
   it('Foo is h1 tag', () => {
     const wrapper = mount(<Foo title="title" />);
 
-    console.dir(wrapper.html());
-    expect(wrapper).toBeTruthy();
+    expect(wrapper.find('h1')).toBeTruthy();
   });
 });
