@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Foo Foo is h1 tag 1`] = `ReactWrapper {}`;
-
-exports[`Foo is h1 tag`] = `
-  <h1>
-    title
-  <h1>
-`;
