@@ -10,6 +10,6 @@ export default defineConfig({
   history: {
     type: 'hash',
   },
-  base: './',
+  publicPath: './',
   hash: true,
 });
