@@ -11,6 +11,5 @@ export default defineConfig({
     type: 'hash',
   },
   base: './',
-  publicPath: './',
   hash: true,
 });
