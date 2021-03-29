@@ -10,7 +10,6 @@ export default defineConfig({
   history: {
     type: 'hash',
   },
-  base: './public/',
-  publicPath: './',
+  publicPath: process.env.NODE_ENV === 'production' ? '/hugSun-UI/' : '/',
   hash: true,
 });
