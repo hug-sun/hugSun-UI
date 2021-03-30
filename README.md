@@ -32,6 +32,7 @@ $ npm run build
 
    - commit 信息必须符合 type(scope): subject 的规范
    - type 提交类型为以下类型`feat|fix|docs|dx|style|refactor|perf|test|workflow|build|ci|chore|types|wip|release`
+   - 严禁使用--no-verify 跳过 commit 信息验证
 
 2. 目录规范
 
