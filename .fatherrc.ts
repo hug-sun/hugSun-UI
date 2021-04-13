@@ -1,5 +1,7 @@
 export default {
-  esm: 'rollup',
-  cjs: 'rollup',
+  esm: 'babel',
+  cjs: 'babel',
   sassInRollupMode: {},
+  extractCSS: true,
+  disableTypeCheck: true,
 };
