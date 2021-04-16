@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Button render correctly 1`] = `
+<Touchable
+  disabled={false}
+  onPress={[Function]}
+  onPressIn={[Function]}
+  onPressOut={[Function]}
+>
+  <div
+    className="h-button h-button-default"
+  >
+    <div
+      className="h-button-loading-container"
+    >
+      <div
+        className="h-button-loading-main"
+      />
+    </div>
+    <div
+      className="h-button-text-container"
+    >
+      <span>
+        default
+      </span>
+    </div>
+  </div>
+</Touchable>
+`;

@@ -1,0 +1,35 @@
+.h-button {
+  width: 100px;
+  line-height: 35px;
+  height: 35px;
+  background: lightskyblue;
+  font-size: 20px;
+  text-align: center;
+  &.h-button-loading {
+    overflow: hidden;
+    .h-button-loading-container {
+      width: 20px;
+      height: 20px;
+      border-width: 1px 1px 0 0;
+      border-color: #000;
+      border-style: solid;
+      border-radius: 50%;
+      animation: rotate 1s linear infinite;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+  }
+  .h-button-text-container {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
