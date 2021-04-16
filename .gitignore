@@ -25,3 +25,6 @@
 # ide
 /.vscode
 /.idea
+
+# coverage
+/coverage
