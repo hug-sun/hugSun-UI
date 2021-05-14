@@ -16,4 +16,7 @@ export default defineConfig({
   },
   publicPath: process.env.NODE_ENV === 'production' ? '/hugSun-UI/' : '/', // 静态资源地址 ./其实也可以
   hash: true, // 这块是静态资源会标记hash 并不是路由中的hash 不要弄混了
+  sass: {
+    prependData: "@import '~@/theme/variables.scss';",
+  },
 });
