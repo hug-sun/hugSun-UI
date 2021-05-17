@@ -3,14 +3,14 @@ import './iconfont/iconfont.scss';
 import classNames from 'classnames';
 import { IIconType } from './PropsType';
 
-const prefix = 'h-icon';
+const prefixCls = 'h-icon';
 
 const Icon: React.FC<IIconType> = props => {
   const { type, animate } = props;
   const innerCls = classNames({
-    [prefix]: true,
+    [prefixCls]: true,
     [`icon-${type}`]: true,
-    [`${prefix}-animate`]: animate,
+    [`${prefixCls}-animate`]: animate,
   });
   return <i className={innerCls} />;
 };
