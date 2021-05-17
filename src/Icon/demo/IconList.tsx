@@ -7,7 +7,7 @@ const IconList: React.FC = props => {
   return (
     <div className="demo-icon-list">
       {iconList.map(item => (
-        <IconItem type={item} animate={item === 'loading'} />
+        <IconItem key={item} type={item} animate={item === 'loading'} />
       ))}
     </div>
   );
