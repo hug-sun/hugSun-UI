@@ -4,6 +4,9 @@
 export interface IIconType {
   /** 图标种类 */
   type: string;
-  /** 是否为动画图标 */
+  /**
+   * @description 是否为动画图标
+   * @default false
+   * */
   animate?: boolean;
 }
