@@ -19,4 +19,5 @@ export default defineConfig({
   sass: {
     prependData: "@import '~@/theme/variables.scss';",
   },
+  styles: [`iframe {background-color: #f5f5f9;}`],
 });
