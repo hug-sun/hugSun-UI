@@ -1,0 +1,64 @@
+.h-list {
+  .h-list-header {
+    padding: 30 * $rpx;
+    color: #888;
+    font-size: 32 * $rpx;
+  }
+  .h-list-item {
+    min-height: 88 * $rpx;
+    padding: 0 30 * $rpx;
+    background-color: #fff;
+    transition: background-color .2s;
+    &.h-list-item-active {
+      background-color: #ddd;
+    }
+    .h-list-item-line {
+      min-height: 88 * $rpx;
+      border-bottom: 1px solid #ddd;
+      padding: 14 * $rpx 0;
+      display: flex;
+      align-items: center;
+      vertical-align: middle;
+      overflow: hidden;
+    }
+    .h-list-item-thumb {
+      line-height: 0;
+      img {
+        width: 44 * $rpx;
+        height: 44 * $rpx;
+        vertical-align: middle;
+      }
+      & + .h-list-item-wrap {
+        margin-left: 20 * $rpx;
+      }
+    }
+    .h-list-item-wrap {
+      font-size: 34 * $rpx;
+      flex-grow: 1;
+      .h-list-item-title {
+        line-height: 1.5;
+      }
+      .h-list-item-subtitle {
+        color: #888;
+        font-size: 30 * $rpx;
+      }
+    }
+    .h-list-item-extra {
+      font-size: 32 * $rpx;
+      width: auto;
+      color: #888;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: right;
+      flex-basis: 36%;
+    }
+    .h-list-item-arrow {
+      color: #ccc;
+      font-size: 50 * $rpx;
+    }
+  }
+  .h-list-item:nth-last-child(1) .h-list-item-line {
+    border: none;
+  }
+}

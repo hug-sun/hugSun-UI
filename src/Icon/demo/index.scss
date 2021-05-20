@@ -1,0 +1,21 @@
+.demo-icon-list {
+  display: flex;
+  flex-flow: row wrap;
+  flex-direction: row;
+
+
+  .demo-icon-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: calc(100% / 3);
+    margin-top: 50 * $rpx;
+    .iconfont {
+      font-size: 80 * $rpx;
+      margin-bottom: 10 * $rpx;
+    }
+    .demo-icon-type {
+      font-size: 40 * $rpx;
+    }
+  }
+}
