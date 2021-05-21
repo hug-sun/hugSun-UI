@@ -1,0 +1,60 @@
+.h-input-wrap{
+  font-size: 14px;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap; // 不换行
+  width: 100%;
+  justify-content: center;
+
+  .h-input-addon{
+    position: relative;
+    padding: 0 11px;
+    font-weight: normal;
+    text-align: center;
+    background-color: #fafafa;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    transition: all 0.3s;
+    max-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* 设置内容垂直居中*/
+    &::before{
+      display: inline-block;
+      content: "";
+      height: 100%;
+      vertical-align: middle;
+    }
+    /* --*/
+
+    &:first-child {
+      border-right: 0;
+    }
+    &:last-child {
+      border-left: 0;
+    }
+  }
+  .h-input {
+    padding-left: 10px;
+    border: 1px solid #ddd;
+    flex:1;
+
+    &.h-input-lg{
+      height: 40px;
+      line-height: 40px;
+    }
+    &.h-input-sm{
+      height: 20px;
+      line-height: 20px;
+    }
+    &.h-input-borderless {
+      border: none
+    }
+
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+  }
+}
+
