@@ -10,4 +10,7 @@ module.exports = {
     '^(?!.*\\.(js|jsx|ts|tsx|css|less|sass|scss|stylus|json)$)':
       '@umijs/test/helpers/transformers/file.js',
   },
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1',
+  },
 };
