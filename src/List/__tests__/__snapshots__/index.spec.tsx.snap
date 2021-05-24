@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List List render correctly 1`] = `
+<div
+  className="h-list"
+>
+  <div
+    className="h-list-wrap"
+  >
+    <ListItem
+      arrow="horizontal"
+      extra="extra content"
+      subtitle="subtitle"
+      thumb="logo.png"
+    >
+      title
+    </ListItem>
+  </div>
+</div>
+`;
