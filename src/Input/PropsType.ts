@@ -4,9 +4,7 @@ import React, { ReactNode } from 'react';
  * Input properties
  */
 export default interface InputPropsType {
-  max?: number;
   maxlength?: number;
-  min?: number;
   placeholder?: string;
   type?:
     | 'button'
@@ -29,11 +27,11 @@ export default interface InputPropsType {
   prefix?: ReactNode;
   suffix?: ReactNode;
   defaultValue?: string;
+  onChage?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   [propName: string]: any;
-}
-
-export interface InputFocusOptions {
-  cursor?: 'start' | 'end' | 'all';
 }
 
 export const defaultProps = {

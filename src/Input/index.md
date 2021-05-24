@@ -13,30 +13,23 @@ nav:
 import React from 'react';
 import { Input, Icon } from 'hugSun-UI';
 const [val, setVal] = React.useState(null);
-const handleChange = () => {
-  console.log('change', 111);
-};
-const handlePressEnter = () => {
-  console.log('PressEnter', 111);
-};
-const handleFocus = () => {
-  console.log('focus');
-};
 
-const setProps = {
-  defaultValue: 'test',
-  className: 'test',
-};
+const setProps = {};
 export default () => {
   return (
     <>
-      <Input
-        {...setProps}
-        onFocus={handleFocus}
-        //  maxlength={5}
-        prefix={<Icon type="loading" />}
-        type="textarea"
-      ></Input>
+      <span style={{ fontSize: '16px' }}>基本-大小</span>
+      <Input></Input>
+      <Input size="large"></Input>
+      <span style={{ fontSize: '16px' }}> 带默认值</span>
+      <Input defaultValue="默认值"></Input>
+      <Input value="初始值"></Input>
+      <span style={{ fontSize: '16px' }}>限制长度为5</span>
+      <Input maxlength={5}></Input>
+      <span style={{ fontSize: '16px' }}>带标签的 input</span>
+      <Input addonBefore="before" addonAfter="after"></Input>
+      <span style={{ fontSize: '16px' }}>带有前缀图标的 input</span>
+      <Input prefix={<Icon type="loading" />}></Input>
     </>
   );
 };

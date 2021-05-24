@@ -1,10 +1,12 @@
 import React, { useState, useRef, useEffect, ReactElement } from 'react';
 import './index.scss';
 import classnames from 'classnames';
-import InputPropsType, { defaultProps, InputFocusOptions } from './PropsType';
+import InputPropsType, { defaultProps } from './PropsType';
 
 const Input: React.FC<InputPropsType> = props => {
+  // 定义ref
   const inputEl = useRef<HTMLInputElement>(null);
+  // 设置input初始值
   const [oninput, setOninput] = useState<string | number>();
   // 设置input框的初始值
   const [value, setValue] = useState<string | number>();
@@ -20,15 +22,6 @@ const Input: React.FC<InputPropsType> = props => {
       }
       return;
     }
-  };
-
-  // 方法设置
-  const triggerFocus = (
-    element?: HTMLInputElement | HTMLTextAreaElement,
-    option?: InputFocusOptions,
-  ) => {
-    if (!element) return;
-    // element.focus(option);
   };
 
   // onchange事件后的处理
@@ -72,7 +65,6 @@ const Input: React.FC<InputPropsType> = props => {
   //键盘事件处理
   const hanleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
     const { onPressEnter, onKeyDown } = props;
-    // enter 键
     if (onPressEnter && e.keyCode === 13) {
       onPressEnter(e);
       return;
@@ -123,7 +115,6 @@ const Input: React.FC<InputPropsType> = props => {
   // 渲染是否带有addon的组件
   const RenderAddonInput = (children: ReactElement) => {
     const { addonBefore, addonAfter } = props;
-    // if (!addonAfter || !addonBefore) return;
     const _addonBefore = addonBefore ? (
       <span className="h-input-addon">{addonBefore}</span>
     ) : null;
@@ -135,7 +126,6 @@ const Input: React.FC<InputPropsType> = props => {
     return (
       <span className="h-input-wrap">
         {_addonBefore}
-
         {React.cloneElement(children)}
         {_addonAfter}
       </span>
@@ -144,16 +134,7 @@ const Input: React.FC<InputPropsType> = props => {
 
   // 渲染input
   const renderInput = () => {
-    const {
-      className,
-      id,
-      disabled,
-      bordered,
-      size,
-      type,
-      placeholder,
-      defaultValue,
-    } = props;
+    const { className, disabled, bordered, size } = props;
 
     const otherProps: any = {};
     const otherPropsArray: Array<string> = [
@@ -161,6 +142,8 @@ const Input: React.FC<InputPropsType> = props => {
       'type',
       'defaultValue',
       'placeholder',
+      'maxlength',
+      'value',
     ];
     // class设置
     const setClassName = () => {
@@ -174,7 +157,7 @@ const Input: React.FC<InputPropsType> = props => {
       });
     };
 
-    // 设置属性
+    // 设置其他属性
     const setOtherPorps = () => {
       for (let item of otherPropsArray) {
         if (item in props) {
@@ -183,29 +166,29 @@ const Input: React.FC<InputPropsType> = props => {
       }
       return otherProps;
     };
+    setOtherPorps();
 
     return (
       <>
         <input
-          // ref={inputEl}
-          // placeholder={placeholder ? placeholder : '请输入内容'}
           className={setClassName()}
-          // disabled={disabled}
-          // id={id}
-          // type={type ? type : 'text'}
           {...otherProps}
+          disabled={disabled}
           onKeyDown={hanleKeyDown}
           onFocus={handleFocus}
           onInput={setMaxLength}
-          defaultValue={defaultValue}
           onChange={handleOnChange}
-          // value={oninput}
-          // required
         />
       </>
     );
   };
 
-  return <>{RenderAddonInput(renderPrefix(renderInput()))} </>;
+  return (
+    <>
+      {props.prefix || props.suffix
+        ? RenderAddonInput(renderPrefix(renderInput()))
+        : RenderAddonInput(renderInput())}{' '}
+    </>
+  );
 };
 export default Input;
