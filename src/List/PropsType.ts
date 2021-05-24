@@ -10,11 +10,6 @@ type listItemArrowType = 'up' | 'down' | 'horizontal' | 'none';
  */
 export interface IListPropsType {
   /**
-   * @description       是否设置列表圆角
-   * @default           false
-   */
-  radius?: boolean;
-  /**
    * @description       列表头部内容
    * @default           ""
    * @type              string | ReactElement | () => void | string | ReactElement
@@ -44,11 +39,6 @@ export interface IListItemPropsType {
    * @type              string | React.ReactElement
    */
   extra?: renderType;
-  /**
-   * @description       列表额外内容是否换行显示全部内容
-   * @default           false
-   */
-  showAll?: boolean;
   /**
    * @description       列表尾端箭头方向 设置none时不显示
    * @default           "none"

@@ -28,7 +28,6 @@ const List: React.FC<IListPropsType> & { Item: typeof ListItem } = props => {
 
 List.Item = ListItem;
 List.defaultProps = {
-  radius: false,
   renderHeader: '',
   renderFooter: '',
 };

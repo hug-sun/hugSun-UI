@@ -64,7 +64,6 @@ const ListItem: React.FC<IListItemPropsType> = props => {
 ListItem.defaultProps = {
   subtitle: '',
   extra: '',
-  showAll: false,
   arrow: 'none',
 };
 
