@@ -11,7 +11,7 @@ nav:
 
 ```tsx
 import React from 'react';
-import { Input } from 'hugSun-UI';
+import { Input, Icon } from 'hugSun-UI';
 const [val, setVal] = React.useState(null);
 const handleChange = () => {
   console.log('change', 111);
@@ -26,7 +26,6 @@ const handleFocus = () => {
 const setProps = {
   defaultValue: 'test',
   className: 'test',
-  size: 'large',
 };
 export default () => {
   return (
@@ -35,6 +34,8 @@ export default () => {
         {...setProps}
         onFocus={handleFocus}
         //  maxlength={5}
+        prefix={<Icon type="loading" />}
+        type="textarea"
       ></Input>
     </>
   );

@@ -96,32 +96,29 @@ const Input: React.FC<InputPropsType> = props => {
       onBlur(e);
     }
   };
-  // 渲染是否带有prefix的组件
-  // const renderPrefix = () => {
-  //   const { prefix, suffix } = props;
 
-  //   const _prefix = prefix ? (
-  //     <span className={styles.prefix} onClick={this.emptyValue}>{prefix}</span>
-  //   ) : null;
+  // 渲染是否带有affix的组件
+  const renderPrefix = (children: ReactElement) => {
+    const { prefix, suffix } = props;
+    console.log(prefix);
+    const _prefix = prefix ? (
+      <span className="h-input-affix h-input-prefix">{prefix}</span>
+    ) : null;
 
-  //   const closeBtn = (<i className={styles.closeBtn} onClick={this.emptyValue}></i>)
+    const _suffix = suffix ? (
+      <span className="h-input-affix h-input-suffix">
+        {suffix ? suffix : null}
+      </span>
+    ) : null;
 
-  //   const _suffix = this.state.isHasCloseBtn ? closeBtn : (
-  //     <span className={styles.suffix}>
-  //       {
-  //         suffix ? suffix : null
-  //       }
-  //     </span>
-  //   )
-
-  //   return (
-  //     <span className={styles.inputGroupWrapper}>
-  //       {_prefix}
-  //       {React.cloneElement(children)}
-  //       {_suffix}
-  //     </span>
-  //   );
-  // }
+    return (
+      <span className="h-input-affix-wrap">
+        {_prefix}
+        {React.cloneElement(children)}
+        {_suffix}
+      </span>
+    );
+  };
 
   // 渲染是否带有addon的组件
   const RenderAddonInput = (children: ReactElement) => {
@@ -138,6 +135,7 @@ const Input: React.FC<InputPropsType> = props => {
     return (
       <span className="h-input-wrap">
         {_addonBefore}
+
         {React.cloneElement(children)}
         {_addonAfter}
       </span>
@@ -158,8 +156,12 @@ const Input: React.FC<InputPropsType> = props => {
     } = props;
 
     const otherProps: any = {};
-    const otherPorpsArray: Array<string> = ['maxLength'];
-
+    const otherPropsArray: Array<string> = [
+      'id',
+      'type',
+      'defaultValue',
+      'placeholder',
+    ];
     // class设置
     const setClassName = () => {
       let { precls } = defaultProps;
@@ -172,26 +174,38 @@ const Input: React.FC<InputPropsType> = props => {
       });
     };
 
+    // 设置属性
+    const setOtherPorps = () => {
+      for (let item of otherPropsArray) {
+        if (item in props) {
+          otherProps[item] = props[item];
+        }
+      }
+      return otherProps;
+    };
+
     return (
       <>
         <input
-          ref={inputEl}
-          placeholder={placeholder ? placeholder : '请输入内容'}
+          // ref={inputEl}
+          // placeholder={placeholder ? placeholder : '请输入内容'}
           className={setClassName()}
-          disabled={disabled}
-          id={id}
-          type={type ? type : 'text'}
+          // disabled={disabled}
+          // id={id}
+          // type={type ? type : 'text'}
+          {...otherProps}
           onKeyDown={hanleKeyDown}
           onFocus={handleFocus}
           onInput={setMaxLength}
           defaultValue={defaultValue}
           onChange={handleOnChange}
-          value={oninput}
+          // value={oninput}
+          // required
         />
       </>
     );
   };
 
-  return <>{RenderAddonInput(renderInput())}</>;
+  return <>{RenderAddonInput(renderPrefix(renderInput()))} </>;
 };
 export default Input;

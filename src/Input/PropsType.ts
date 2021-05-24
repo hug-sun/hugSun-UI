@@ -4,17 +4,10 @@ import React, { ReactNode } from 'react';
  * Input properties
  */
 export default interface InputPropsType {
-  accept?: string;
-  autocomplete?: 'on' | 'off';
-  autofocus?: boolean;
   max?: number;
   maxlength?: number;
   min?: number;
-  multiple?: boolean;
-  name?: string;
   placeholder?: string;
-  readonly?: boolean;
-  required?: boolean;
   type?:
     | 'button'
     | 'checkbox'
@@ -31,8 +24,10 @@ export default interface InputPropsType {
   id?: string;
   disabled?: boolean;
   size?: 'default' | 'large' | 'small';
-  addonBefore: ReactNode;
-  addonAfter: ReactNode;
+  addonBefore?: ReactNode;
+  addonAfter?: ReactNode;
+  prefix?: ReactNode;
+  suffix?: ReactNode;
   defaultValue?: string;
   [propName: string]: any;
 }
