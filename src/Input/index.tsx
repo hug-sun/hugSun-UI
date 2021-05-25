@@ -92,7 +92,6 @@ const Input: React.FC<InputPropsType> = props => {
   // 渲染是否带有affix的组件
   const renderPrefix = (children: ReactElement) => {
     const { prefix, suffix } = props;
-    console.log(prefix);
     const _prefix = prefix ? (
       <span className="h-input-affix h-input-prefix">{prefix}</span>
     ) : null;
