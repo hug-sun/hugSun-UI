@@ -5,6 +5,7 @@
  * @File:
  */
 import React from 'react';
+import './style/global.scss';
 
 // console.log(React.ReactNode);
 export { default as Button } from './Button';
@@ -14,3 +15,5 @@ export { default as Input } from './Input';
 
 export { default as List } from './List';
 export { default as Icon } from './Icon';
+
+export { default as NavBar } from './NavBar';

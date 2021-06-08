@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, ReactElement } from 'react';
+import React, { useState, useRef, ReactElement } from 'react';
 import './index.scss';
 import classnames from 'classnames';
 import InputPropsType, { defaultProps } from './PropsType';
