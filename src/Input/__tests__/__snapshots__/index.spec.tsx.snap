@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Input render correctly 1`] = `
+<Fragment>
+  <span
+    className="h-input-wrap"
+  >
+    <input
+      className="h-input"
+      onChange={[Function]}
+      onFocus={[Function]}
+      onInput={[Function]}
+      onKeyDown={[Function]}
+    />
+  </span>
+   
+</Fragment>
+`;

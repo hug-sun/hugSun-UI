@@ -1,0 +1,86 @@
+.h-input-wrap{
+  font-size: 14px;
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap; // 不换行
+  width: 100%;
+  justify-content: center;
+  border: 1px solid #ddd;
+ 
+  .h-input-addon{
+    position: relative;
+    padding: 0 11px;
+    font-weight: normal;
+    text-align: center;
+    background-color: #fafafa;
+    border-radius: 2px;
+    transition: all 0.3s;
+    max-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* 设置内容垂直居中*/
+    &::before{
+      display: inline-block;
+      content: "";
+      height: 100%;
+      vertical-align: middle;
+    }
+    /* --*/
+
+    &:first-child {
+      border-right: 1px solid #ddd;
+    }
+    &:last-child {
+      border-left: 1px solid #ddd;
+    }
+  }
+  // affix
+  .h-input-affix-wrap {
+    display: inline-flex;
+    width: 100%;
+    padding: 4px;  
+    border-radius: 2px;
+    // border: 1px solid #999;
+    box-sizing: border-box;
+    background-color: #fff;
+    .h-input-affix {
+      &::before{
+        display: inline-block;
+        content: "";
+        height: 100%;
+        vertical-align: middle;
+      }
+      padding:4px;
+      .h-affix {
+        width: 100%; 
+      }
+    }
+  }
+  .h-input {
+    padding-left: 10px;
+    border: none;
+    flex:1;
+    width: 100%;
+    outline: none;
+    height: 30px;
+    line-height: 30px;
+    &:focus {
+      outline: none;
+    }
+    &.h-input-lg{
+      height: 40px;
+      line-height: 40px;
+    }
+    &.h-input-sm{
+      height: 20px;
+      line-height: 20px;
+    }
+    &.h-input-borderless {
+      border: none
+    }
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+  }
+}

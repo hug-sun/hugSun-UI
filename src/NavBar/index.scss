@@ -1,0 +1,40 @@
+.h-navbar {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  flex-wrap: nowrap; 
+  font-size: 14px;
+
+  &.h-navbar-normal{
+    background: #fff;
+    color:#ffb531;
+  }
+  &.h-navbar-blue{
+    background: #fff;
+    color:hsl(234, 100%, 60%);
+  }
+  .h-navbar-left {
+    flex:1;
+    -webkit-box-flex: 1;
+    // background: #789;
+    height: 100%;
+    padding-left: 15px;
+  }
+  .h-navbar-title {
+    flex:1;
+    -webkit-box-flex: 1;
+    // background: #123;
+    height: 100%;
+    font-size: 18px;
+  }
+  .h-navbar-right{
+    flex:1;
+    -webkit-box-flex: 1;
+    // background: rgb(35, 119, 202);
+    height: 100%;
+    padding-right: 15px;
+  }
+}

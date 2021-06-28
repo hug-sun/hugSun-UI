@@ -1,0 +1,106 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+}
+
+:root {
+  --blue: #3271ae;
+  --indigo: #6c216d;
+  --purple: #ce93bf;
+  --pink: #f091a0;
+  --red: #d23918;
+  --orange: #ed6d3d;
+  --yellow: #fac03d;
+  --green: #4c8045;
+  --teal: #87c0ca;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #9aa7b1;
+  --gray-dark: #343a40;
+  --primary: #4994c4;
+  --secondary: #6c757d;
+  --success: #84a729;
+  --info: #17a2b8;
+  --warning: #ecd452;
+  --danger: #c12c1f;
+  --light: #f8f9fa;
+  --dark: #343a40;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+button {
+  border-radius: 0;
+}
+
+button:focus {
+  outline: none;
+}
+
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"],
+input[type="month"] {
+  -webkit-appearance: listbox;
+}
+
+[hidden] {
+  /*  任何元素加上hidden属性就可以隐藏  */
+  display: none !important;
+}
+
+/*# sourceMappingURL=global.css.map */
